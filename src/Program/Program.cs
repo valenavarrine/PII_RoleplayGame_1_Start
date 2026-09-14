@@ -5,6 +5,7 @@
 //--------------------------------------------------------------------------------
 
 using System;
+using Library;
 
 namespace Ucu.Poo.RolePlayGame
 {
@@ -16,9 +17,10 @@ namespace Ucu.Poo.RolePlayGame
         /// <summary>
         /// Punto de entrada al programa principal.
         /// </summary>
-        public static void Main(string[] args)
-        {
-            Console.WriteLine("¡Hola mundo!");
-        }
+            Mago undertaker = new Mago("undertaker");
+            Arma guadaña = new Arma(50);
+            Ropaje tunica = new Ropaje(10);
+            undertaker.AgregarItem(guadaña);
+            undertaker.AgregarItem(tunica);
     }
 }
