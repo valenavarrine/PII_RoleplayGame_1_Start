@@ -1,6 +1,6 @@
 namespace Library;
 
-public abstract class Arma
+public class Arma : Item
 {
     private int valorAtaque;
 
