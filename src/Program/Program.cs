@@ -5,6 +5,7 @@
 //--------------------------------------------------------------------------------
 
 using System;
+using System.Runtime.Intrinsics.Arm;
 
 namespace Ucu.Poo.RolePlayGame
 {
@@ -18,7 +19,9 @@ namespace Ucu.Poo.RolePlayGame
         /// </summary>
         public static void Main(string[] args)
         {
-            Console.WriteLine("¡Hola mundo!");
+            Mago Harry = new Mago("Harry el potter");
+            Arma lapizMagico = new Arma(valorAtaque: 75);
+            Ropaje capaMagica = new Ropaje(valorDefensa: 50); 
         }
     }
 }
