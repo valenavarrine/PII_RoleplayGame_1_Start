@@ -5,6 +5,7 @@
 //--------------------------------------------------------------------------------
 
 using System;
+using System.Runtime.Intrinsics.Arm;
 
 namespace Ucu.Poo.RolePlayGame
 {
@@ -18,7 +19,9 @@ namespace Ucu.Poo.RolePlayGame
         /// </summary>
         public static void Main(string[] args)
         {
-            Console.WriteLine("¡Hola mundo!");
+            Elfo Dobby = new Elfo("Dobby");
+            Ropaje escudo = new Ropaje(valorDefensa: 20);
+            Arma daga = new Arma(valorAtaque: 20);
         }
     }
 }
