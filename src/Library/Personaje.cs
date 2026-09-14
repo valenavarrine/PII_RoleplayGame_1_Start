@@ -6,9 +6,9 @@ namespace Ucu.Poo.RolePlayGame
 {
     public abstract class Personaje
     {
-        private string nombre;
-        private int vida;
-        private int vidaMaxima;
+        private string nombre {get; }
+        private int vida {get; }
+        private int vidaMaxima {get; }
         private int ataqueBase;
         private int defensaBase;
         private List<Item> items = new List<Item>();
