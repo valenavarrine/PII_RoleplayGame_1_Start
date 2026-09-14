@@ -7,7 +7,7 @@ namespace Ucu.Poo.RolePlayGame
     public abstract class Personaje
     {
         private string nombre {get; }
-        private int vida {get; }
+        private int vida;
         private int vidaMaxima {get; }
         private int ataqueBase;
         private int defensaBase;
@@ -89,6 +89,11 @@ namespace Ucu.Poo.RolePlayGame
                 throw new ArgumentException("La cantidad no puede ser negativa.", nameof(cantidad));
 
             this.defensaBase += cantidad;
+        }
+
+        public obtenerVida()
+        {
+            return this.vida;
         }
     }
 }
