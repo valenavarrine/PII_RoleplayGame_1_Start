@@ -18,7 +18,9 @@ namespace Ucu.Poo.RolePlayGame
         /// </summary>
         public static void Main(string[] args)
         {
-            Console.WriteLine("¡Hola mundo!");
+            Mago mago = new Mago("Gandalf el Gris");
+            Arma varaMagica = new Arma(valorAtaque: 25);
+            Ropaje túnicaAstral = new Ropaje(valorDefensa: 15);
         }
     }
 }
