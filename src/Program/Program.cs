@@ -7,7 +7,6 @@
 using System;
 using System.Runtime.Intrinsics.Arm;
 
-
 namespace Ucu.Poo.RolePlayGame
 {
     /// <summary>
@@ -31,8 +30,13 @@ namespace Ucu.Poo.RolePlayGame
             Ropaje escudo = new Ropaje(valorDefensa: 20);
             Arma daga = new Arma(valorAtaque: 20);
             Mago Voldemort = new Mago("El volde");
-            Arma lapizMagico = new Arma(valorAtaque: 77);
-            Ropaje capaMagica = new Ropaje(valorDefensa: 55);
+            Arma lapizMagicoK = new Arma(valorAtaque: 77);
+            Ropaje capaMagicaK = new Ropaje(valorDefensa: 55);
+
+            Mago Harry = new Mago("Harry el potter");
+            Arma lapizMagico = new Arma(valorAtaque: 75);
+            Ropaje capaMagica = new Ropaje(valorDefensa: 50); 
+
         }
     }
 }
