@@ -5,6 +5,7 @@
 //--------------------------------------------------------------------------------
 
 using System;
+using System.Runtime.Intrinsics.Arm;
 
 namespace Ucu.Poo.RolePlayGame
 {
@@ -25,6 +26,9 @@ namespace Ucu.Poo.RolePlayGame
             Mago undertaker = new Mago("undertaker");
             Arma guadaña = new Arma(50);
             Ropaje tunica = new Ropaje(10);
+            Elfo Dobby = new Elfo("Dobby");
+            Ropaje escudo = new Ropaje(valorDefensa: 20);
+            Arma daga = new Arma(valorAtaque: 20);
         }
     }
 }

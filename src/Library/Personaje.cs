@@ -91,7 +91,7 @@ namespace Ucu.Poo.RolePlayGame
             this.defensaBase += cantidad;
         }
 
-        public obtenerVida()
+        public ObtenerVida()
         {
             return this.vida;
         }
