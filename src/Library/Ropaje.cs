@@ -1,11 +1,11 @@
-namespace Library;
+using System;
+using System.Collections.Generic;
+
+namespace  Ucu.Poo.RolePlayGame;
 
 public class Ropaje : Item
 {
-    private int valorDefensa;
-
-    public Ropaje(int valorDefensa)
+    public Ropaje(int valorDefensa) : base(0,valorDefensa)
     {
-        this.valorDefensa = valorDefensa;
     }
 }

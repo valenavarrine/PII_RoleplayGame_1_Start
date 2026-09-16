@@ -1,11 +1,11 @@
-namespace Library;
+using System;
+using System.Collections.Generic;
+
+namespace  Ucu.Poo.RolePlayGame;
 
 public class Arma : Item
 {
-    private int valorAtaque;
-
-    public Arma(int valorAtaque)
+    public Arma(int valorAtaque) : base(valorAtaque,0)
     {
-        this.valorAtaque = valorAtaque;
     }
 }
