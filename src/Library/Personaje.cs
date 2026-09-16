@@ -33,7 +33,7 @@ namespace Ucu.Poo.RolePlayGame
 
         public void AgregarItem(Item item)
         {
-            if (item is null)
+            if (item == null)
                 throw new ArgumentNullException(nameof(item));
             this.items.Add(item);
         }
@@ -69,7 +69,7 @@ namespace Ucu.Poo.RolePlayGame
         // Un personaje ataca a otro usando su propio ataque total
         public void RealizarAtaque(Personaje objetivo)
         {
-            if (objetivo is null)
+            if (objetivo == null)
                 throw new ArgumentNullException(nameof(objetivo));
 
             objetivo.RecibirAtaque(this.ObtenerAtaqueTotal());
@@ -91,11 +91,9 @@ namespace Ucu.Poo.RolePlayGame
             this.defensaBase += cantidad;
         }
 
-        public ObtenerVida()
+        public int ObtenerVida()
         {
             return this.vida;
         }
-
-        //Ver metodo bool para ver si esta muerto
     }
 }
