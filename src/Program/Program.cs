@@ -21,6 +21,10 @@ namespace Ucu.Poo.RolePlayGame
             Mago mago = new Mago("Gandalf el Gris");
             Arma varaMagica = new Arma(valorAtaque: 25);
             Ropaje túnicaAstral = new Ropaje(valorDefensa: 15);
+
+            Mago undertaker = new Mago("undertaker");
+            Arma guadaña = new Arma(50);
+            Ropaje tunica = new Ropaje(10);
         }
     }
 }
