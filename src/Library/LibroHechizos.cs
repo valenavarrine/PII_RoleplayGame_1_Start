@@ -1,21 +1,28 @@
-namespace Library;
+using System;
+using System.Collections.Generic;
 
+
+namespace Ucu.Poo.RolePlayGame;
 public class LibroDeHechizos : Item
 {
     private List<Hechizo> hechizos;
-    public LibroDeHechizos()
+    public LibroDeHechizos() : base(0,0)
     {
         hechizos = new List<Hechizo>();
     }
     public void AgregarHechizo(Hechizo h)
     {
+        if (h == null)
+       {
+           throw new ArgumentNullException(nameof(h));
+       }
         hechizos.Add(h);
     }
     public void QuitarHechizo(Hechizo h)
     {
         hechizos.Remove(h);
     }
-     public override int ObtenerAtaque()
+    public override int ObtenerAtaque()
     {
         int ataqueTotal = 0;
         foreach (Hechizo h in hechizos)

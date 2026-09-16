@@ -1,5 +1,8 @@
-namespace Library;
+using System;
+using System.Collections.Generic;
 
+
+namespace Ucu.Poo.RolePlayGame;
 public class Hechizo
 {
     private int valorAtaque;
