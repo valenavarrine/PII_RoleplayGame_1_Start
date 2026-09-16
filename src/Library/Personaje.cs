@@ -95,5 +95,7 @@ namespace Ucu.Poo.RolePlayGame
         {
             return this.vida;
         }
+
+        //Ver metodo bool para ver si esta muerto
     }
 }
