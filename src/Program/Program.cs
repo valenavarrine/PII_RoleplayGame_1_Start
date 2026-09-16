@@ -6,10 +6,7 @@
 
 using System;
 using System.Runtime.Intrinsics.Arm;
-<<<<<<< HEAD
-=======
-using Library;
->>>>>>> especies
+
 
 namespace Ucu.Poo.RolePlayGame
 {
