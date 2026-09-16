@@ -1,52 +1,63 @@
+using System;
 using NUnit.Framework;
-using Library;
 using Ucu.Poo.RolePlayGame;
 
-namespace Library.Tests
+namespace Ucu.Poo.RolePlayGame.Tests
 {
-    [TestFixture]
+    // Clase auxiliar interna para simular objetivos de pruebas
+    internal class PersonajeDePrueba : Personaje
+    {
+        public PersonajeDePrueba(string nombre, int vidaMaxima, int ataqueBase, int defensaBase)
+            : base(nombre, vidaMaxima, ataqueBase, defensaBase)
+        {
+        }
+    }
+
+
     public class MagoTests
     {
-        // Prueba que  Mago, este se construya con 100 de vida inicial.
+        // Prueba que al construir un Mago, su vida inicial sea exactamente 100.
         [Test]
-        public void Constructor_Mago_InicializaVidaEn100()
+        public void Constructor_InicializaVidaEnCien()
         {
+            const int vidaEsperada = 100;
+
             Mago mago = new Mago("Gandalf");
 
-            Assert.That(mago.ObtenerVida(), Is.EqualTo(100));
+            Assert.That(mago.ObtenerVida(), Is.EqualTo(vidaEsperada));
         }
 
-        // Prueba que  LibroDeHechizos equipado y estudiar  nuevo hechizo, el Mago aumente su ataque y defensa base.
+        // Prueba que al estudiar un nuevo hechizo con un LibroDeHechizos equipado, se incrementen las estadísticas base.
         [Test]
         public void Estudiar_ConLibroEquipado_AumentaEstadisticasBase()
         {
+            const int ataqueHechizo = 15;
+            const int defensaHechizo = 5;
+
             Mago mago = new Mago("Gandalf");
             LibroDeHechizos libro = new LibroDeHechizos();
-            mago.AgregarItem(libro); // O mago.Equipar(libro) según su implementación de Personaje
+            mago.AgregarItem(libro);
 
-            Hechizo bolaDeFuego = new Hechizo("Bola de Fuego", 15, 5);
+            Hechizo bolaDeFuego = new Hechizo("Bola de Fuego", ataqueHechizo, defensaHechizo);
 
-            // Mago ataca a un objetivo sin defensa para calcular el ataque previo
-            PersonajeDePrueba objetivo = new PersonajeDePrueba("Objetivo", 200, 0, 0);
-            int ataquePrevio = mago.ObtenerAtaqueTotal();
+            int ataqueInicial = mago.ObtenerAtaqueTotal();
 
             mago.Estudiar(bolaDeFuego);
 
-            Assert.That(mago.ObtenerAtaqueTotal(), Is.EqualTo(ataquePrevio + 15));
+            Assert.That(mago.ObtenerAtaqueTotal(), Is.EqualTo(ataqueInicial + ataqueHechizo));
         }
 
-        // Prueba que Mago NO posee LibroDeHechizos entre  ítems, el método Estudiar no modifica estadísticas.
         [Test]
         public void Estudiar_SinLibroEquipado_NoModificaEstadisticasBase()
         {
             Mago mago = new Mago("Gandalf");
             Hechizo bolaDeFuego = new Hechizo("Bola de Fuego", 15, 5);
 
-            int ataquePrevio = mago.ObtenerAtaqueTotal();
+            int ataqueInicial = mago.ObtenerAtaqueTotal();
 
             mago.Estudiar(bolaDeFuego);
 
-            Assert.That(mago.ObtenerAtaqueTotal(), Is.EqualTo(ataquePrevio));
+            Assert.That(mago.ObtenerAtaqueTotal(), Is.EqualTo(ataqueInicial));
         }
     }
 }

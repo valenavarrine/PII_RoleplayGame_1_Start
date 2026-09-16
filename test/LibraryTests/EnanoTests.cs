@@ -1,28 +1,33 @@
+using System;
 using NUnit.Framework;
-using Library;
 using Ucu.Poo.RolePlayGame;
 
-namespace Library.Tests
+namespace Ucu.Poo.RolePlayGame.Tests
 {
-    [TestFixture]
+    // Tests para la clase Enano (Debe ser public para NUnit)
     public class EnanoTests
     {
-        // Prueba que Enano, su vida inicial sea de 200.
+        // Prueba que al construir un Enano, su vida inicial sea exactamente 200.
         [Test]
-        public void Constructor_Enano_InicializaVidaEn200()
+        public void Constructor_InicializaVidaEnDoscientos()
         {
+            const int vidaEsperada = 200;
+
             Enano enano = new Enano("Gimli");
 
-            Assert.That(enano.ObtenerVida(), Is.EqualTo(200));
+            Assert.That(enano.ObtenerVida(), Is.EqualTo(vidaEsperada));
         }
 
-        // Prueba el Enano y el funcionamiento de ataque/defensa recibiendo daño.
+        // Prueba que RecibirAtaque descuente de la vida la diferencia entre el poder del ataque y la defensa base del Enano.
         [Test]
-        public void RecibirAtaque_AtaqueMayorADefensa_DisminuyeVidaSegunDefensaBase()
+        public void RecibirAtaque_PoderMayorQueDefensaBase_DisminuyeVidaEnLaDiferencia()
         {
-            Enano enano = new Enano("Gimli"); // Nace con 200 vida, 12 defensa base
+            const int vidaInicial = 200;
+            const int defensaBaseEnano = 12;
             const int poderAtaque = 30;
-            int vidaEsperada = 200 - (poderAtaque - 12);
+            int vidaEsperada = vidaInicial - (poderAtaque - defensaBaseEnano);
+
+            Enano enano = new Enano("Gimli");
 
             enano.RecibirAtaque(poderAtaque);
 
