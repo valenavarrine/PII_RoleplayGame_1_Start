@@ -1,17 +1,17 @@
-namespace Library;
-
-public class Elfo : Personaje
-{
-    // El elfo nace siempre con 150 de vida total, su ataque base es 8 y su defensa base es 8
-    public Elfo(string nombre) : base(nombre, 150, 8, 8)
+namespace Ucu.Poo.RolePlayGame {
+    public class Elfo : Personaje
     {
-    }
-
-    public void CurarA(Personaje objetivo)
-    {
-        if (objetivo != null)
+        // El elfo nace siempre con 150 de vida total, su ataque base es 8 y su defensa base es 8
+        public Elfo(string nombre) : base(nombre, 150, 8, 8)
         {
-            objetivo.Curar();
+        }
+
+        public void CurarA(Personaje objetivo)
+        {
+            if (objetivo != null)
+            {
+                objetivo.Curar();
+            }
         }
     }
 }
