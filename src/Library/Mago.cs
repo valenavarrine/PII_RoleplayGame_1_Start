@@ -9,27 +9,10 @@ namespace Ucu.Poo.RolePlayGame
         {
         }
 
-        public void Estudiar(Hechizo nuevoHechizo)
+       public void Estudiar()
         {
-            // LibroDeHechizos se guarda como item
-            foreach (Item item in this.Items)
-            {
-                if (item is LibroDeHechizos libro)
-                {
-                    // Se agrega el hechizo al libro
-                    libro.AgregarHechizo(nuevoHechizo);
-
-                    // Punto 6: Aumenta la base del Mago al estudiar
-                    this.AumentarAtaqueBase(nuevoHechizo.Ataque);
-                    this.AumentarDefensaBase(nuevoHechizo.Defensa);
-
-                    Console.WriteLine($"{this.Nombre} nuevo hechizo: {nuevoHechizo.Nombre}");
-                    return;
-                }
-            }
-            
-            // Si no tenía un libro, no puede estudiar el hechizo
-            Console.WriteLine($"{this.Nombre} necesita un Libro de Hechizos para poder estudiar.");
+            AumentarAtaqueBase(5);
+            AumentarDefensaBase(5);
         }
     }
     
