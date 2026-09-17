@@ -1,8 +1,7 @@
 using NUnit.Framework;
-using Library;
 using Ucu.Poo.RolePlayGame;
 
-namespace Library.Tests
+namespace Ucu.Poo.RolePlayGame.Tests
 {
     [TestFixture]
     public class MagoTests

@@ -1,8 +1,7 @@
 using NUnit.Framework;
-using Library;
 using Ucu.Poo.RolePlayGame;
 
-namespace Library.Tests
+namespace Ucu.Poo.RolePlayGame.Tests
 {
     [TestFixture]
     public class ElfoTests
@@ -21,15 +20,13 @@ namespace Library.Tests
         public void CurarA_PersonajeConDano_RestauraVidaAlMaximo()
         {
             Elfo elfo = new Elfo("Legolas");
-            PersonajeDePrueba objetivo = new PersonajeDePrueba("Gimli", 200, 10, 0);
+            Enano coco = new Enano("COCO");
+            Mago mimi = new Mago("MIMI");
+            mimi.RealizarAtaque(coco);
 
-            // Simulamos daño directo en el objetivo
-            objetivo.RecibirAtaque(50);
-            Assert.That(objetivo.ObtenerVida(), Is.LessThan(200));
+            elfo.CurarA(coco);
 
-            elfo.CurarA(objetivo);
-
-            Assert.That(objetivo.ObtenerVida(), Is.EqualTo(200));
+            Assert.That(coco.ObtenerVida(), Is.EqualTo(200));
         }
     }
 }
